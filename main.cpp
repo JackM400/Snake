@@ -25,12 +25,34 @@ void Input() {
 }
 
 void Draw() {
+    //target design
+    //  ^^^^^^^^^^^^^
+    //  ^           ^
+    //  ^           ^
+    //  ^^^^^^^^^^^^^
     system("cls");\
     //make screen
     //width
     for (int i = 0; i < width; i++) {
         cout << "^"; //top
     }
+
+    //game screen
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            if (j == 0) {
+                cout << "|";
+            } else {
+                cout << " ";
+            }
+
+            if (j == width) {
+                cout << "|";
+            }
+
+        }
+    }
+
     cout << endl;
     for (int i = 0; i < width; i++) {
         cout << "^"; //bottom
@@ -61,6 +83,8 @@ int main() {
         GameLogic();
         Draw();
         Input();
+        gameRunning = false;
+        _sleep(10);
 
     }
     cout << "Snake Game" << std::endl;
