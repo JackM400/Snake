@@ -25,6 +25,17 @@ void Input() {
 }
 
 void Draw() {
+    system("cls");\
+    //make screen
+    //width
+    for (int i = 0; i < width; i++) {
+        cout << "^"; //top
+    }
+    cout << endl;
+    for (int i = 0; i < width; i++) {
+        cout << "^"; //bottom
+    }
+
 
 }
 
