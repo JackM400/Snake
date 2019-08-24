@@ -30,10 +30,14 @@ void Draw() {
 
 void Setup() {
     gameRunning = true;
+    score = 0;
     direction = STATIONARY;
     // snake in middle
     x = width / 5;
     y = height / 5;
+    foodX = rand() % width;
+    foodY = rand() % height;
+
 }
 
 void GameLogic() {
