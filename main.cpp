@@ -1,10 +1,11 @@
 #include <iostream>
+#include <synchapi.h>
 
 using namespace std;
 bool gameRunning = true;
 int score;
-int width = 50;
-int height = 50;
+int width = 20;
+int height = 20;
 int x;
 int y;
 int foodX;
@@ -25,39 +26,36 @@ void Input() {
 }
 
 void Draw() {
-    //target design
-    //  ^^^^^^^^^^^^^
-    //  ^           ^
-    //  ^           ^
-    //  ^^^^^^^^^^^^^
+    /*
+   //target design
+   //  ^^^^^^^^^^^^^
+   //  ^           ^
+   //  ^           ^
+   //  ^^^^^^^^^^^^^
     system("cls");\
-    //make screen
-    //width
-    for (int i = 0; i < width; i++) {
-        cout << "^"; //top
-    }
+   //make screen
+    //width = height == square screen
+     */
+    system("cls"); //system("clear");
+    for (int i = 0; i < width + 2; i++)
+        cout << " ^"; //top
+    cout << endl;
 
-    //game screen
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-            if (j == 0) {
-                cout << "|";
-            } else {
-                cout << " ";
-            }
-
-            if (j == width) {
-                cout << "|";
-            }
-
+            if (j == 0)
+                cout << " < "; //L.side
+            cout << "  ";
+            if (j == width - 1)
+                cout << " > "; //R.side
         }
+        cout << endl;
     }
 
+    for (int i = 0; i < width + 3; i++)
+        cout << " ^"; //bottom
     cout << endl;
-    for (int i = 0; i < width; i++) {
-        cout << "^"; //bottom
-    }
-
+    cout << "Score:" << score << endl;
 
 }
 
@@ -84,8 +82,7 @@ int main() {
         Draw();
         Input();
         gameRunning = false;
-        _sleep(10);
-
+        Sleep(10);
     }
     cout << "Snake Game" << std::endl;
     return 0;
