@@ -92,7 +92,7 @@ void Draw() {
     for (int i = 0; i < width + 3; i++)
         cout << " ^"; //bottom
     cout << endl;
-    cout << "Score:" << score << endl;
+    cout << "Score: " << score << endl;
 
 }
 
@@ -109,15 +109,28 @@ void Setup() {
 }
 
 void GameLogic() {
-
+    switch (direction) {
+        case UP:
+            y++;
+            break;
+        case DOWN:
+            y--;
+            break;
+        case LEFT:
+            x--;
+            break;
+        case RIGHT:
+            x++;
+            break;
+    }
 }
 
 int main() {
     Setup();
     while (gameRunning) {
         GameLogic();
-        Draw();
         Input();
+        Draw();
         gameRunning = false;
         Sleep(10);
     }
