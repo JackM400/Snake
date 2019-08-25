@@ -46,6 +46,17 @@ void Draw() {
             if (j == 0)
                 cout << " < "; //L.side
             cout << "  ";
+
+
+            //Game Screen
+            if (j == x && i == 7) {
+                cout<< "O"; //snake head
+            }
+            if (j == foodX && i == foodY){
+                cout << "*"; //FOOD [* . ,]
+            }
+
+
             if (j == width - 1)
                 cout << " > "; //R.side
         }
