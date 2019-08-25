@@ -7,8 +7,8 @@ bool gameRunning = true;
 int score;
 int width = 20;
 int height = 20;
-int x;
-int y;
+int snakeX;
+int snakeY;
 int foodX;
 int foodY;
 
@@ -74,7 +74,7 @@ void Draw() {
 
 
             //Game Screen
-            if (j == x && i == 7) {
+            if (j == snakeX && i == 7) {
                 cout << "O "; //snake head
             } else if (j == foodX && i == foodY) {
                 cout << "* "; //FOOD [* . ,]
@@ -101,8 +101,8 @@ void Setup() {
     score = 0;
     direction = STATIONARY;
     // snake in middle
-    x = width / 5;
-    y = height / 5;
+    snakeX = width / 5;
+    snakeY = height / 5;
     foodX = rand() % width;
     foodY = rand() % height;
 
@@ -111,16 +111,16 @@ void Setup() {
 void GameLogic() {
     switch (direction) {
         case UP:
-            y++;
+            snakeY++;
             break;
         case DOWN:
-            y--;
+            snakeY--;
             break;
         case LEFT:
-            x--;
+            snakeX--;
             break;
         case RIGHT:
-            x++;
+            snakeX++;
             break;
     }
 }
