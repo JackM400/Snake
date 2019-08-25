@@ -45,15 +45,16 @@ void Draw() {
         for (int j = 0; j < width; j++) {
             if (j == 0)
                 cout << " < "; //L.side
-            cout << "  ";
+
 
 
             //Game Screen
             if (j == x && i == 7) {
-                cout<< "O"; //snake head
-            }
-            if (j == foodX && i == foodY){
-                cout << "*"; //FOOD [* . ,]
+                cout << "O "; //snake head
+            } else if (j == foodX && i == foodY) {
+                cout << "* "; //FOOD [* . ,]
+            } else {
+                cout << "  ";
             }
 
 
