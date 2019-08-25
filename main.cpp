@@ -25,22 +25,27 @@ snakeDirection direction;
 void Input() {
     if (_kbhit()) {
         switch (_getch()) {
-            //up
+            //quit / pause
+            case 'p':
+                gameRunning = false;
+                break;
+                //up
             case 'w':
                 direction = UP;
                 break;
-            //down
+                //down
             case 's':
                 direction = DOWN;
                 break;
-            //left
+                //left
             case 'a':
                 direction = LEFT;
                 break;
-            //right
+                //right
             case 'd':
                 direction = RIGHT;
                 break;
+
         }
     }
 }
