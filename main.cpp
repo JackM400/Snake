@@ -2,6 +2,14 @@
 #include <synchapi.h>
 #include <conio.h>
 
+
+//TODO
+// correct input problem,
+// build tail,
+// write score to file ,
+// option for retry
+
+
 using namespace std;
 bool gameRunning = true;
 int score;
@@ -129,8 +137,8 @@ void GameLogic() {
         gameRunning = false;
     }
     //eat food
-    if (snakeX == foodX && snakeY == foodY){
-        score++;
+    if (snakeX == foodX && snakeY == foodY) {
+        score += 5;
         foodX = rand() % width;
         foodY = rand() % height;
     }
