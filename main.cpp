@@ -123,6 +123,17 @@ void GameLogic() {
             snakeX++;
             break;
     }
+    //hit boarder
+    if (snakeX < 0 || snakeX > width || snakeY < 0 || snakeY > height) {
+        cout << "GAME OVER";
+        gameRunning = false;
+    }
+    //eat food
+    if (snakeX == foodX && snakeY == foodY){
+        score++;
+        foodX = rand() % width;
+        foodY = rand() % height;
+    }
 }
 
 int main() {
