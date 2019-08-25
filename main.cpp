@@ -1,5 +1,6 @@
 #include <iostream>
 #include <synchapi.h>
+#include <conio.h>
 
 using namespace std;
 bool gameRunning = true;
@@ -22,7 +23,26 @@ snakeDirection direction;
 
 
 void Input() {
-
+    if (_kbhit()) {
+        switch (_getch()) {
+            //up
+            case 'w':
+                direction = UP;
+                break;
+            //down
+            case 's':
+                direction = DOWN;
+                break;
+            //left
+            case 'a':
+                direction = LEFT;
+                break;
+            //right
+            case 'd':
+                direction = RIGHT;
+                break;
+        }
+    }
 }
 
 void Draw() {
