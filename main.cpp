@@ -9,7 +9,7 @@
 // write score to file ,
 // option for retry
 
-
+int MAXLENGTH = 100;
 using namespace std;
 bool gameRunning = true;
 int score;
@@ -17,6 +17,9 @@ int width = 20;
 int height = 20;
 int snakeX;
 int snakeY;
+int tailSize = 0;
+int tailX[MAXLENGTH];
+int tailY[MAXLENGTH];
 int foodX;
 int foodY;
 
@@ -138,6 +141,7 @@ void GameLogic() {
     }
     //eat food
     if (snakeX == foodX && snakeY == foodY) {
+        tailSize++;
         score += 5;
         foodX = rand() % width;
         foodY = rand() % height;
