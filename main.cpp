@@ -120,6 +120,21 @@ void Setup() {
 }
 
 void GameLogic() {
+    //previous co-ordinates of tail (end)
+    int prevTailX = tailX[0];
+    int prevTailY = tailY[0];
+    int prevTailX_2;
+    int prevTailY_2;
+    //update tail positions
+    for (int i = 0; i < tailSize; i++) {
+        tailX[i] = prevTailX;
+        tailY[i] = prevTailY
+        prevTailX_2 = tailX[i];
+        prevTailY_2 = tailY[i];
+        prevTailX = prevTailX_2;
+        prevTailY = prevTailY_2;
+    }
+
     switch (direction) {
         case UP:
             snakeY++;
