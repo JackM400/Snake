@@ -79,11 +79,9 @@ void Draw() {
 
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-            if (j == 0)
+            if (j == 0) {
                 cout << " < "; //L.side
-
-
-
+            }
             //Game Screen
             if (j == snakeX && i == 7) {
                 cout << "O "; //snake head
@@ -92,8 +90,6 @@ void Draw() {
             } else {
                 cout << "  ";
             }
-
-
             if (j == width - 1)
                 cout << " > "; //R.side
         }
