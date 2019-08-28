@@ -89,8 +89,10 @@ void Draw() {
                 cout << "* "; //FOOD [* . ,]
             } else {
                 for (int n; n < tailSize; n++) {
+                    bool isDrawTail = false;
                     if(tailX[n] == j && tailY[n] == i){
                         cout << "o";
+                        isDrawTail = true;
                     }
                 }
                 cout << "  ";
