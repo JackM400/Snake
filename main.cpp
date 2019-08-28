@@ -88,16 +88,17 @@ void Draw() {
             } else if (j == foodX && i == foodY) {
                 cout << "* "; //FOOD [* . ,]
             } else {
-                for (int n;
-                     n < tailSize; n++) {   //loop through screen , if their is a tail element at co-ordinate , draw
-                    bool isDrawTail = false; //check if tail is drawn at position [i,j] ,if true add tail icon , if not draw blankspace
+                bool isDrawTail = false; //check if tail is drawn at position [i,j] ,if true add tail icon ,
+                // if not draw blankspace
+                for (int n = 0; n < tailSize; n++) {   //loop through screen ,
+                    // if their is a tail element at co-ordinate , draw
                     if (tailX[n] == j && tailY[n] == i) {
                         cout << "o";
                         isDrawTail = true;
                     }
-                    if (!isDrawTail) {
-                        cout << "  ";
-                    }
+                }
+                if (!isDrawTail) {
+                    cout << "  ";
                 }
             }
 
@@ -131,6 +132,9 @@ void GameLogic() {
     int prevTailY = tailY[0];
     int prevTailX_2;
     int prevTailY_2;
+    //set initial tail position
+    tailX[0] = snakeX;
+    tailY[0] = snakeY;
     //update tail positions
     for (int i = 0; i < tailSize; i++) {
         prevTailX_2 = tailX[i];
