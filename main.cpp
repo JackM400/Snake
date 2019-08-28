@@ -88,15 +88,19 @@ void Draw() {
             } else if (j == foodX && i == foodY) {
                 cout << "* "; //FOOD [* . ,]
             } else {
-                for (int n; n < tailSize; n++) {
-                    bool isDrawTail = false;
-                    if(tailX[n] == j && tailY[n] == i){
+                for (int n;
+                     n < tailSize; n++) {   //loop through screen , if their is a tail element at co-ordinate , draw
+                    bool isDrawTail = false; //check if tail is drawn at position [i,j] ,if true add tail icon , if not draw blankspace
+                    if (tailX[n] == j && tailY[n] == i) {
                         cout << "o";
                         isDrawTail = true;
                     }
+                    if (!isDrawTail) {
+                        cout << "  ";
+                    }
                 }
-                cout << "  ";
             }
+
             if (j == width - 1)
                 cout << " > "; //R.side
         }
