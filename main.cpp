@@ -88,6 +88,11 @@ void Draw() {
             } else if (j == foodX && i == foodY) {
                 cout << "* "; //FOOD [* . ,]
             } else {
+                for (int n; n < tailSize; n++) {
+                    if(tailX[n] == j && tailY[n] == i){
+                        cout << "o";
+                    }
+                }
                 cout << "  ";
             }
             if (j == width - 1)
@@ -104,15 +109,14 @@ void Draw() {
 }
 
 void Setup() {
-    gameRunning = true;
-    score = 0;
     direction = STATIONARY;
     // snake in middle
     snakeX = width / 5;
     snakeY = height / 5;
     foodX = rand() % width;
     foodY = rand() % height;
-
+    gameRunning = true;
+    score = 0;
 }
 
 void GameLogic() {
@@ -123,10 +127,10 @@ void GameLogic() {
     int prevTailY_2;
     //update tail positions
     for (int i = 0; i < tailSize; i++) {
-        tailX[i] = prevTailX;
-        tailY[i] = prevTailY
         prevTailX_2 = tailX[i];
         prevTailY_2 = tailY[i];
+        tailX[i] = prevTailX;
+        tailY[i] = prevTailY
         prevTailX = prevTailX_2;
         prevTailY = prevTailY_2;
     }
