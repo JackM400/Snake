@@ -101,7 +101,6 @@ void Draw() {
                     cout << "  ";
                 }
             }
-
             if (j == width - 1)
                 cout << " > "; //R.side
         }
@@ -143,6 +142,14 @@ void GameLogic() {
         tailY[i] = prevTailY;
         prevTailX = prevTailX_2;
         prevTailY = prevTailY_2;
+    }
+
+    //if hit tail section,
+    // if snake head is in same position as any tail
+    for (int i = 0; i < tailSize; i++) {
+        if (snakeX == tailX[i] && snakeY == tailY[i]) { // if in same coordinates
+            gameRunning = false;
+        }
     }
 
     switch (direction) {
