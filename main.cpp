@@ -9,7 +9,7 @@
 // write score to file ,
 // option for retry
 
-int MAXLENGTH = 100;
+const int MAXLENGTH = 100;
 using namespace std;
 bool gameRunning = true;
 int score;
@@ -89,7 +89,7 @@ void Draw() {
                 cout << "* "; //FOOD [* . ,]
             } else {
                 bool isDrawTail = false; //check if tail is drawn at position [i,j] ,if true add tail icon ,
-                // if not draw blankspace
+                // if not draw blank space
                 for (int n = 0; n < tailSize; n++) {   //loop through screen ,
                     // if their is a tail element at co-ordinate , draw
                     if (tailX[n] == j && tailY[n] == i) {
@@ -140,7 +140,7 @@ void GameLogic() {
         prevTailX_2 = tailX[i];
         prevTailY_2 = tailY[i];
         tailX[i] = prevTailX;
-        tailY[i] = prevTailY
+        tailY[i] = prevTailY;
         prevTailX = prevTailX_2;
         prevTailY = prevTailY_2;
     }
@@ -157,6 +157,8 @@ void GameLogic() {
             break;
         case RIGHT:
             snakeX++;
+            break;
+        case STATIONARY:
             break;
     }
     //hit boarder
