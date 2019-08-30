@@ -5,7 +5,6 @@
 
 //TODO
 // correct input problem,
-// build tail,
 // write score to file ,
 // option for retry
 
@@ -13,15 +12,18 @@ const int MAXLENGTH = 100;
 using namespace std;
 bool gameRunning = true;
 int score;
+
 int width = 20;
 int height = 20;
+
 int snakeX;
 int snakeY;
+int foodX;
+int foodY;
+
 int tailSize = 0;
 int tailX[MAXLENGTH];
 int tailY[MAXLENGTH];
-int foodX;
-int foodY;
 
 enum snakeDirection {
     STATIONARY = 0,
@@ -56,7 +58,6 @@ void Input() {
             case 'd':
                 direction = RIGHT;
                 break;
-
         }
     }
 }
