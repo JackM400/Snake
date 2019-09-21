@@ -63,16 +63,6 @@ void Input() {
 }
 
 void Draw() {
-    /*
-   //target design
-   //  ^^^^^^^^^^^^^
-   //  ^           ^
-   //  ^           ^
-   //  ^^^^^^^^^^^^^
-    system("cls");\
-   //make screen
-    //width = height == square screen
-     */
     system("cls"); //system("clear");
     for (int i = 0; i < width + 2; i++)
         cout << " ^"; //top
@@ -185,6 +175,7 @@ void GameLogic() {
 
 int main() {
     Setup();
+    Input();
     while (gameRunning) {
         GameLogic();
         Input();
